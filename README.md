@@ -45,7 +45,6 @@ ResNet18-Image-Classifier/
 └── .gitignore
 ```
 
-The CIFAR-10 dataset folders are not required for this version of the project because the application uses a pretrained ImageNet model.
 
 ## Installation
 
@@ -77,11 +76,7 @@ pip install -r requirements.txt
 
 ## Usage
 
-The application currently loads an image from the `images` directory.
-
-Update the image path in `cnn_ResNet_18.py` to point to the image you want to classify.
-
-For example, if your script uses a relative path:
+To classify your own image, open cnn_ResNet_18.py and replace the image path with the path to your desired image. Run the script to display the five most likely predictions and their confidence scores.
 
 ```python
 from pathlib import Path
