@@ -18,7 +18,7 @@ model = resnet18(weights=weights).to(device)
 model.eval()
 
 
-# ResNet_18 is trained with 10000 dfferent classes. common animals, Vehicles & Transport , food and drinks, Everyday Tech & Electronics, Home & Office Objects,
+# ResNet_18 is trained with 1000 dfferent classes. common animals, Vehicles & Transport , food and drinks, Everyday Tech & Electronics, Home & Office Objects,
 #- and sports are invlolved in those classes.
 image = Image.open(
     "/Users/abid/Python/cnn_python/images/trucks.jpg"
