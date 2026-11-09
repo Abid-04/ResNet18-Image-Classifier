@@ -78,11 +78,6 @@ pip install -r requirements.txt
 
 To classify your own image, open cnn_ResNet_18.py and replace the image path with the path to your desired image. Run the script to display the five most likely predictions and their confidence scores.
 
-```python
-from pathlib import Path
-
-image_path = Path(__file__).resolve().parent / "images" / "trucks.jpg"
-image = Image.open(image_path).convert("RGB")
 ```
 
 Run the application:
