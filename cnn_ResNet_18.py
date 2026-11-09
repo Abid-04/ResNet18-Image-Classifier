@@ -26,11 +26,12 @@ image = Image.open(
 
 
 
+#since ResNet18 expects images prepared in a particular way, the images need to be preprocessed in some ways.
 preprocess = weights.transforms()
 
 image_tensor = preprocess(image).unsqueeze(0).to(device)
 
-# Predict
+# Prediction
 with torch.no_grad():
     outputs = model(image_tensor)
     probabilities = torch.softmax(outputs, dim=1)
@@ -45,6 +46,8 @@ top_probs, top_indices = torch.topk(
 
 classes = weights.meta["categories"]
 
+
+#Showing the top 5 predictions which the model predicted
 print("Top 5 predictions:")
 
 for i in range(5):
@@ -57,6 +60,7 @@ for i in range(5):
 predicted_index = top_indices[0][0].item()
 predicted_class = classes[predicted_index]
 
+#Image
 plt.imshow(image)
 plt.title(f"Prediction: {predicted_class}")
 plt.axis("off")
