@@ -12,6 +12,8 @@ The application processes an input image, predicts its contents using a model tr
 - **Automatic Image Preprocessing:** Applies the transformations required by the model.
 - **GPU Acceleration:** Supports Apple's Metal Performance Shaders (MPS) when available, with CPU fallback.
 - **Result Visualization:** Displays the input image with its most likely predicted class using Matplotlib.
+- **Interactive Web Interface:** Upload images through a Streamlit application.
+- **Visual Confidence Scores:** View the top five predictions with confidence bars.
 
 ## Technologies Used
 
@@ -21,6 +23,7 @@ The application processes an input image, predicts its contents using a model tr
 - ResNet-18
 - Pillow (PIL)
 - Matplotlib
+- Streamlit
 
 ## How It Works
 
@@ -37,9 +40,9 @@ The application processes an input image, predicts its contents using a model tr
 
 ```text
 ResNet18-Image-Classifier/
+├── app.py
 ├── cnn_ResNet_18.py
 ├── images/
-│   └── trucks.jpg
 ├── requirements.txt
 ├── README.md
 └── .gitignore
@@ -76,19 +79,36 @@ pip install -r requirements.txt
 
 ## Usage
 
-To classify your own image, open cnn_ResNet_18.py and replace the image path with the path to your desired image. Run the script to display the five most likely predictions and their confidence scores.
+## Usage
 
+### Option 1: Streamlit Web Interface
+
+Launch the interactive application:
+
+```bash
+python -m streamlit run app.py
 ```
 
-Run the application:
+Streamlit will open the application in your browser, typically at `http://localhost:8501`.
+
+1. Upload a JPG, JPEG, or PNG image.
+2. Click **Classify Image**.
+3. View the top five predicted ImageNet classes.
+4. See the confidence percentage and visual confidence bar for each prediction.
+
+### Option 2: Python Script
+
+You can also run the original classification script:
 
 ```bash
 python cnn_ResNet_18.py
 ```
 
-The script prints the five most likely classifications with confidence scores and opens a Matplotlib window displaying the input image with its top predicted label.
+Update the image path inside the script before running it.
 
-The pretrained model weights may be downloaded automatically on the first run.
+The script prints the top five predictions and displays the image using Matplotlib.
+
+**Note:** Pretrained model weights may be downloaded automatically on the first run.
 
 ## Example Output
 
@@ -117,8 +137,6 @@ The model is loaded with pretrained ImageNet weights and used in evaluation mode
 
 ## Future Improvements
 
-- Build an interactive interface for uploading images.
-- Display prediction confidence scores visually.
 - Add support for classifying multiple images.
 - Improve input validation and error handling.
 - Explore fine-tuning ResNet-18 on a custom dataset.
