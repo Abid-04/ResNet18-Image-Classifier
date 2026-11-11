@@ -31,7 +31,7 @@ preprocess = weights.transforms()
 
 image_tensor = preprocess(image).unsqueeze(0).to(device)
 
-# Prediction
+# Checking it with a prediction
 with torch.no_grad():
     outputs = model(image_tensor)
     probabilities = torch.softmax(outputs, dim=1)
