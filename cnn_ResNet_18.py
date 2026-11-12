@@ -3,12 +3,13 @@ import torch
 from torchvision.models import resnet18, ResNet18_Weights
 from PIL import Image
 import matplotlib.pyplot as plt
+from sklearn.model_selection import train_test_split
+
 
 #will use mps GPU if it is available
 device = torch.device(
     "mps" if torch.backends.mps.is_available() else "cpu"
 )
-
 print("Device:", device)
 
 
