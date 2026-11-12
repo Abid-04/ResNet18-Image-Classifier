@@ -22,7 +22,7 @@ def load_model():
 
 model, weights = load_model()
 
-# Upload an image
+# uploading the image from here
 uploaded_file = st.file_uploader(
     "Choose an image",
     type=["jpg", "jpeg", "png"]
@@ -34,7 +34,7 @@ if uploaded_file is not None:
     st.image(image, caption="Uploaded image", width="stretch")
 
     if st.button("Classify Image"):
-        # Prepare the image for ResNet18
+        # transform the image for resnet_18
         preprocess = weights.transforms()
         input_tensor = preprocess(image).unsqueeze(0)
 
