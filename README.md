@@ -145,6 +145,6 @@ The model is loaded with pretrained ImageNet weights and used in evaluation mode
 
 **Abidurahman Niazi**
 
-Software Engineering Student | Python, Java & AI
+Software Engineering Student | Python, Java , AI & ML
 
 [GitHub Profile](https://github.com/Abid-04)
