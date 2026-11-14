@@ -29,7 +29,6 @@ image = Image.open(
 
 #since ResNet18 expects images prepared in a particular way, the images need to be preprocessed in some ways.
 preprocess = weights.transforms()
-
 image_tensor = preprocess(image).unsqueeze(0).to(device)
 
 # Checking it with a prediction
