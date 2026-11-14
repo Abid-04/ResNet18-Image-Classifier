@@ -28,7 +28,7 @@ The application processes an input image, predicts its contents using a model tr
 ## How It Works
 
 1. Loads a pretrained ResNet-18 model using Torchvision.
-2. Selects the MPS device if available, otherwise uses the CPU.
+2. Selects the MPS device if available, otherwise uses the CPU(MPS device is faster compared to normal CPU).
 3. Loads an input image and converts it to RGB.
 4. Preprocesses the image using the transformations associated with the pretrained model.
 5. Performs inference without calculating gradients.
